@@ -5,6 +5,7 @@ var maxRow = 24;
 var maxCol = 14;
 var rw=2, 
 	col=7;
+var gameOver = false;
 
 /**
  * this function help us to find cells in simple way,
