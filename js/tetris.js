@@ -7,6 +7,8 @@ var rw=2,
 	col=7;
 var gameOver = false;
 
+var r,
+	c;
 /**
  * this function help us to find cells in simple way,
  * you must enter number of row and column without class name
@@ -36,8 +38,8 @@ function pos(rw, col){
 var f1 = {
 			position:
 			[
-				[pos(rw-1, col), pos(rw, col), pos(rw+1, col), pos(rw+2, col)],
-				[pos(rw, col-1), pos(rw, col), pos(rw, col+1), pos(rw, col+2)]
+				[ [r-1, c], [r, c], [r+1, c], [r+2, c] ],
+				[ [r, c-1], [r, c], [r, c+1], [r, c+2] ]
 			],
 			colorClass: "active1"
 		};
@@ -46,7 +48,7 @@ var f1 = {
 var f2 = {
 			position:
 			[
-				[pos(rw-1, col), pos(rw, col), pos(rw-1, col+1), pos(rw, col+1)]
+				[ [r-1, c], [r, c], [r-1, c+1], [r, c+1)] ]
 			],
 			colorClass: "active2"
 		};
@@ -55,10 +57,10 @@ var f2 = {
 var f3 = {
 			position:
 			[
-				[pos(rw-1, col), pos(rw, col), pos(rw+1, col), pos(rw+1, col+1)],
-				[pos(rw+1, col-1), pos(rw, col-1), pos(rw, col), pos(rw, col+1)],
-				[pos(rw-1, col), pos(rw-1, col+1), pos(rw, col+1), pos(rw+1, col+1)],			
-				[pos(rw+1, col-1), pos(rw+1, col), pos(rw+1, col+1), pos(rw, col+1)]
+				[ [r-1, c], [r, c], [r+1, c], [r+1, c+1] ],
+				[ [r+1, c-1], [r, c-1], [r, c], [r, c+1] ],
+				[ [r-1, c], [r-1, c+1], [r, c+1], [r+1, c+1] ],			
+				[ [r+1, c-1], [r+1, c], [r+1, c+1], [r, c+1] ]
 			],
 			colorClass: "active3"
 		};
@@ -67,10 +69,10 @@ var f3 = {
 var	f4 = { 
 			position:
 			[	
-				[pos(rw-1, col+1), pos(rw, col+1), pos(rw+1, col+1), pos(rw+1, col)],
-				[pos(rw, col-1), pos(rw+1, col-1), pos(rw+1, col), pos(rw+1, col+1)],
-				[pos(rw-1, col), pos(rw, col), pos(rw+1, col), pos(rw-1, col+1)],
-				[pos(rw-1, col-1), pos(rw-1, col), pos(rw-1, col+1), pos(rw, col+1)]
+				[ [r-1, c+1], [r, c+1], [r+1, c+1], [r+1, c] ],
+				[ [r, c-1], [r+1, c-1], [r+1, c], [r+1, c+1] ],
+				[ [r-1, c], [r, c], [r+1, c], [r-1, c+1] ],  
+				[ [r-1, c-1], [r-1, c], [r-1, c+1], [r, c+1)] ]
 			],
 			colorClass: "active4"
 		};
@@ -79,10 +81,10 @@ var	f4 = {
 var f5 = { 
 			position:
 			[
-				[pos(rw-1, col), pos(rw, col), pos(rw+1, col), pos(rw, col+1)],
-				[pos(rw, col-1), pos(rw, col), pos(rw, col+1), pos(rw+1, col)],
-				[pos(rw-1, col), pos(rw, col), pos(rw, col-1), pos(rw+1, col)],
-				[pos(rw-1, col), pos(rw, col), pos(rw, col-1), pos(rw, col+1)]
+				[ [r-1, c], [r, c], [r+1, c], [r, c+1] ],
+				[ [r, c-1], [r, c], [r, c+1], [r+1, c] ],
+				[ [r-1, c], [r, c], [r, c-1], [r+1, c] ],
+				[ [r-1, c], [r, c], [r, c-1], [r, c+1] ]
 			],
 			colorClass: "active5"
 		};
@@ -91,8 +93,8 @@ var f5 = {
 var f6 = {  
 			position:
 			[
-				[pos(rw-1,col), pos(rw, col), pos(rw, col+1), pos(rw+1, col+1)],
-				[pos(rw+1, col-1), pos(rw+1, col), pos(rw, col), pos(rw, col+1)]
+				[ [r-1,c], [r, c], [r, c+1], [r+1, c+1] ],
+				[ [r+1, c-1], [r+1, c], [r, c], [r, c+1] ]
 			],
 			colorClass: "active6"
 		};
@@ -101,8 +103,8 @@ var f6 = {
 var	f7 = {  
 			position: 
 			[
-				[pos(rw-1, col+1), pos(rw, col+1), pos(rw, col), pos(rw+1, col)],
-				[pos(rw, col-1), pos(rw, col), pos(rw+1, col), pos(rw+1, col+1)]
+				[ [r-1, c+1], [r, c+1], [r, c], [r+1, c] ],
+				[ [r, c-1], [r, c], [r+1, c], [r+1, c+1] ]
 			],
 			colorClass: "active7"
 		};
